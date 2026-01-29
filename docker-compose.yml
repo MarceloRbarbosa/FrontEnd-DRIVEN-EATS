@@ -1,0 +1,23 @@
+version: "3.9"
+
+services:
+  dev:
+    build:
+      context: .
+      dockerfile: dockerfile.dev
+    ports:
+      - "5173:5173"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    env_file:
+      - .env
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+
+  prod:
+    build:
+      context: .
+      dockerfile: dockerfile.prod
+    ports:
+      - "8080:80"
