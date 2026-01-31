@@ -4,7 +4,7 @@ services:
   dev:
     build:
       context: .
-      dockerfile: dockerfile.dev
+      dockerfile: Dockerfile
     ports:
       - "5173:5173"
     volumes:
