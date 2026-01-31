@@ -29,6 +29,9 @@ jobs:
   CD-DeployToVercel:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
@@ -41,7 +44,7 @@ jobs:
         env:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-          VERCEL_TOKEN: ${{ secrets.TOKEN_VERCEL }}
+          TOKEN_VERCEL: ${{ secrets.TOKEN_VERCEL }}
         run: |
           echo "Deploying to Vercel..."
           npx vercel --prod --token $TOKEN_VERCEL
