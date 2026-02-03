@@ -42,12 +42,6 @@ docker run -p 8080:80 --env-file driven-eats
 docker compose up -d
 ```
 
-## Testes 
-
-```
-npm run test:ci
-```
-
 ## CD 
 
 **CD**
